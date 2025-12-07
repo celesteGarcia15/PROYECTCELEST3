@@ -1,0 +1,51 @@
+---
+title: "SEMANAA8"
+author: "CELESTE GARCIA"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#CARGANDO LA DATA A TRABAJAR
+data <- read_csv("C:/Users/USER/Downloads/cirrosis.csv")
+```
+
+You can add options to executable code like this
+
+```{r}
+#LIMPIAR LA DATA DE UNA COLUMNA ESPECIFICA
+data_limpia <-data[!is.na(data$Edad), ]
+```
+
+```{r}
+#instalando paquetes
+install.packages("ggplot2")
+
+library(ggplot2)
+```
+
+```{r}
+#histograma
+hist(data$Edad,
+     main = "Histograma de Edad",
+     xlab = "Edad",
+     col = "lightblue",
+     border = "black")
+
+hist(data$Bilirrubina,
+     main = "Histograma de Bilirrubina",
+     xlab = "Bilirrubina",
+     col = "lightgreen",
+     border = "black")
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
